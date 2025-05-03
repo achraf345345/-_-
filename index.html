@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>صفحتي الشخصية - أشرف ناصر الدين</title>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+        body {
+            background: linear-gradient(135deg, #3a3a3a, #1c1c1c);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            width: 90%;
+            margin-left: 5%;
+        }
+        .flag {
+            width: 100px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: #00bcd4;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .links a {
+            color: #00bcd4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .links a:hover {
+            color: #2196f3;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            font-size: 1.2rem;
+            color: #ddd;
+            margin-bottom: 10px;
+        }
+        .comment-section {
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+        textarea, input[type="file"] {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 2px solid #00bcd4;
+            background: #333;
+            color: #fff;
+            font-size: 1rem;
+            resize: vertical;
+        }
+        button {
+            padding: 12px 30px;
+            background: #00bcd4;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #2196f3;
+        }
+        .comment {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .comment img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .comment audio {
+            margin-top: 10px;
+            width: 100%;
+        }
+        .visitor-counter {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.2rem;
+            color: #00e676;
+        }
+        #audioPreview {
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Flag_of_Algeria.svg" alt="علم الجزائر" class="flag" />
+        <h1>أشرف ناصر الدين</h1>
+        <p>من الجزائر، تاريخ الميلاد: 17 ديسمبر 2008</p>
+        <div class="links">
+            <a href="https://web.facebook.com/profile.php?id=100001863575698" target="_blank" rel="noopener noreferrer">صفحتي على فيسبوك</a>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button onclick="toggleTheme()">تغيير الخلفية</button>
+        <select id="languageSelector" onchange="changeLanguage()">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+            <option value="fr">Français</option>
+        </select>
+    </div>
+
+    <div class="section">
+        <h2>المواهب</h2>
+        <ul>
+            <li>كتابة أكواد وبرمجة المواقع الإلكترونية</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>الهوايات</h2>
+        <ul>
+            <li>ألعاب الفيديو</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>التعليم</h2>
+        <ul>
+            <li>الدراسة في السنة الثالثة ثانوي</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>الأهداف المستقبلية</h2>
+        <ul>
+            <li>دخول مجال الذكاء الاصطناعي</li>
+        </ul>
+    </div>
+
+    <div class="comment-section">
+        <h2>أضف تعليقك</h2>
+        <form id="commentForm">
+            <textarea id="commentText" placeholder="اكتب تعليقك هنا..." required></textarea>
+            <input type="file" id="commentImage" accept="image/*" />
+            <div id="voiceSection">
+                <button type="button" id="startRecord" onclick="startRecording()">ابدأ التسجيل الصوتي</button>
+                <button type="button" id="stopRecord" onclick="stopRecording()" disabled>أوقف التسجيل</button>
+                <audio id="audioPreview" controls></audio>
+            </div>
+            <div>
+                <button type="button" onclick="capturePhoto()">📷 التقاط صورة بالكاميرا</button>
+                <video id="camera" autoplay style="display: none;"></video>
+                <canvas id="snapshot" style="display: none;"></canvas>
+            </div>
+            <button type="submit">إرسال</button>
+        </form>
+        <div id="commentsContainer"></div>
+    </div>
+
+    <div class="visitor-counter">
+        عدد الزوار: <span id="visitorCount">0</span>
+    </div>
+
+    <div class="stats">
+        <h2>إحصائيات الصفحة</h2>
+        <p><strong>عدد الزوار:</strong> <span id="visitorCountStats">0</span></p>
+        <p><strong>عدد التعليقات:</strong> <span id="commentCount">0</span></p>
+        <p><strong>عدد اللايكات:</strong> <span id="likeCount">0</span></p>
+    </div>
+
+    <div data-aos="fade-up" style="margin:20px;">
+        <h2>عنوان يظهر عند التمرير</h2>
+        <p>هذا النص سيظهر عند التمرير إلى أسفل الصفحة.</p>
+    </div>
+
+    <div id="welcomeMessage" style="display: none; background: rgba(0,0,0,0.8); color:#fff; padding: 20px; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); border-radius: 15px; z-index: 1000;">
+        <p>مرحبًا بك في صفحتي! أتمنى أن تجد معلوماتي مفيدة. إذا كنت ترغب في معرفة المزيد عني، يمكنك التصفح عبر الأقسام المختلفة!</p>
+        <button onclick="closeWelcomeMessage()">شكرًا!</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // AOS initialization
+        AOS.init();
+
+        // Visitor count
+        let visitorCount = localStorage.getItem("visitorCount") || 0;
+        visitorCount++;
+        localStorage.setItem("visitorCount", visitorCount);
+
+        // Update visitor counters
+        document.getElementById("visitorCount").innerText = visitorCount;
+        document.getElementById("visitorCountStats").innerText = visitorCount;
+
+        // Comments and likes initialization
+        function updateStats() {
+            const comments = JSON.parse(localStorage.getItem("comments") || "[]");
+            document.getElementById("commentCount").innerText = comments.length;
+            const likeCount = comments.reduce((sum, c) => sum + (c.likes || 0), 0);
+            document.getElementById("likeCount").innerText = likeCount;
+        }
+
+        updateStats();
+
+        // Welcome message on first visit
+        window.onload = function() {
+            if (!localStorage.getItem('visited')) {
+                document.getElementById('welcomeMessage').style.display = 'block';
+                localStorage.setItem('visited', 'true');
+            }
+        };
+
+        function closeWelcomeMessage() {
+            document.getElementById('welcomeMessage').style.display = 'none';
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            document.body.classList.toggle('light-theme');
+        }
+
+        // Language selection (placeholder alert)
+        function changeLanguage() {
+            const lang = document.getElementById("languageSelector").value;
+            alert("تم اختيار اللغة: " + lang);
+        }
+
+        // Audio recording
+        let mediaRecorder;
+        let audioChunks = [];
+
+        function startRecording() {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+                    mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        const audioUrl = URL.createObjectURL(audioBlob);
+                        document.getElementById('audioPreview').src = audioUrl;
+                        audioChunks = [];
+                    };
+                    mediaRecorder.start();
+                    document.getElementById('startRecord').disabled = true;
+                    document.getElementById('stopRecord').disabled = false;
+                }).catch(e => alert('لم يتمكن المتصفح من الوصول إلى الميكروفون.'));
+        }
+
+        function stopRecording() {
+            if(mediaRecorder) {
+                mediaRecorder.stop();
+                document.getElementById('startRecord').disabled = false;
+                document.getElementById('stopRecord').disabled = true;
+            }
+        }
+
+        // Capture photo with camera
+        function capturePhoto() {
+            const video = document.getElementById('camera');
+            const canvas = document.getElementById('snapshot');
+            video.style.display = "block";
+            canvas.style.display = "block";
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                    setTimeout(() => {
+                        const context = canvas.getContext('2d');
+                        canvas.width = video.videoWidth;
+                        canvas.height = video.videoHeight;
+                        context.drawImage(video, 0, 0);
+                        stream.getTracks().forEach(track => track.stop());
+                        video.style.display = "none";
+                        canvas.style.display = "none";
+                    }, 3000);
+                }).catch(() => alert('لم يتمكن المتصفح من الوصول إلى الكاميرا.'));
+        }
+
+        // Comment management
+        document.getElementById("commentForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const text = document.getElementById("commentText").value.trim();
+            if(text === "") return alert("الرجاء كتابة تعليق.");
+
+            const imageFile = document.getElementById("commentImage").files[0];
+            const audioUrl = document.getElementById("audioPreview").src || "";
+
+            const time = new Date().toLocaleString();
+            const comments = JSON.parse(localStorage.getItem("comments") || "[]");
+
+            const addComment = (imageUrl = "") => {
+                comments.push({ text, image: imageUrl, audio: audioUrl, time, likes: 0 });
+                localStorage.setItem("comments", JSON.stringify(comments));
+                displayComments();
+                updateStats();
+                document.getElementById("commentForm").reset();
+                document.getElementById("audioPreview").src = "";
+            };
+
+            if (imageFile) {
+                const reader = new FileReader();
+                reader.onload = e => addComment(e.target.result);
+                reader.readAsDataURL(imageFile);
+            } else {
+                addComment();
+            }
+        });
+
+        function displayComments() {
+            const comments = JSON.parse(localStorage.getItem("comments") || "[]");
+            const container = document.getElementById("commentsContainer");
+            container.innerHTML = "";
+
+            comments.forEach((comment, index) => {
+                const div = document.createElement("div");
+                div.className = "comment";
+                div.innerHTML = `
+                    <p>${comment.text}</p>
+                    <p style="font-size:0.9rem;">🕒 ${comment.time}</p>
+                    ${comment.image ? `<img src="${comment.image}" alt="صورة" />` : ""}
+                    ${comment.audio ? `<audio controls src="${comment.audio}"></audio>` : ""}
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        displayComments();
+    </script>
+</body>
+</html>
